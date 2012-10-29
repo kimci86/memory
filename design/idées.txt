@@ -1,0 +1,5 @@
+﻿Niveau de difficulté
+1 : simple memory
+2 : permutation de cartes (effet bonneteau)
+3 : cartes piège
+4 : règles changeantes (trouver les paires de symboles ou paires de couleurs)
