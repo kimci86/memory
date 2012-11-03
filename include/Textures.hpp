@@ -1,11 +1,10 @@
 #ifndef TEXTURES_HPP
 #define TEXTURES_HPP
 
-#include <map>
-#include <string>
 #include <SFML/Graphics.hpp>
+#include "ResourceManager.hpp"
 
-class Textures : private std::map<std::string, sf::Texture>
+class Textures : public ResourceManager<sf::Texture, "graphics">
 {
     public:
         ~Textures();

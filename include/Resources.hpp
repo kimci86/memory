@@ -5,8 +5,6 @@
 #include "Fonts.hpp"
 #include "SoundBuffers.hpp"
 
-#include <iostream>
-
 class Resources : public Textures, public Fonts, public SoundBuffers
 {
 
