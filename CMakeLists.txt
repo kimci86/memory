@@ -16,3 +16,4 @@ add_subdirectory(src)
 
 # install rules
 install(FILES README.md DESTINATION . RENAME readme.txt)
+install(DIRECTORY "${PROJECT_SOURCE_DIR}/data" DESTINATION .)

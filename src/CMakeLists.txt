@@ -12,4 +12,4 @@ include_directories(${SFML_INCLUDE_DIR})
 target_link_libraries(memory ${SFML_LIBRARIES})
 
 # install rules
-install(TARGETS memory DESTINATION bin)
+install(TARGETS memory DESTINATION .)
