@@ -1,9 +1,13 @@
 #include "SoundBuffers.hpp"
 
+SoundBuffers::SoundBuffers()
+ : ResourceManager<sf::SoundBuffer>("sounds")
+{}
+
 sf::Sound SoundBuffers::getSound(const std::string& name)
 {
-    if(!hasSoundBuffer(name))
-        loadSoundBuffer(name);
+    if(!has(name))
+        load(name);
 
-    return sf::Sound(getSoundBuffer(name));
+    return sf::Sound(get(name));
 }

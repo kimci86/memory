@@ -4,10 +4,11 @@
 #include <map>
 #include <string>
 
-template <typename Resource, std::string directory>
+template <typename Resource>
 class ResourceManager : private std::map<std::string, Resource>
 {
     public:
+        ResourceManager(const std::string& directory);
         ~ResourceManager();
 
         bool has(const std::string& name);
@@ -18,6 +19,8 @@ class ResourceManager : private std::map<std::string, Resource>
 
     private:
         typedef std::map<std::string, Resource> map;
+
+        std::string m_directory;
 };
 
 #include <ResourceManager.inl>

@@ -4,16 +4,10 @@
 #include <SFML/Graphics.hpp>
 #include "ResourceManager.hpp"
 
-class Textures : public ResourceManager<sf::Texture, "graphics">
+class Textures : public ResourceManager<sf::Texture>
 {
     public:
-        ~Textures();
-
-        bool hasTexture(const std::string& name);
-        sf::Texture& getTexture(const std::string& name);
-
-        void addTexture(const std::string& name, const sf::Texture& texture);
-        bool loadTexture(const std::string& name, const std::string& filename = std::string());
+        Textures();
 
         sf::Sprite getSprite(const std::string& name, const sf::IntRect& rect = sf::IntRect());
 };

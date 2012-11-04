@@ -4,9 +4,11 @@
 #include <SFML/Audio.hpp>
 #include "ResourceManager.hpp"
 
-class SoundBuffers : public ResourceManager<sf::SoundBuffer, "sounds">
+class SoundBuffers : public ResourceManager<sf::SoundBuffer>
 {
     public:
+        SoundBuffers();
+
         sf::Sound getSound(const std::string& name);
 };
 
