@@ -6,7 +6,7 @@ Game::Game()
  : error(false)
 {
     settings.load();
-    window.create(settings.mode, "Game", sf::Style::Fullscreen);
+    window.create(settings.mode, "Game");
     window.setFramerateLimit(50);
 }
 

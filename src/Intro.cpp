@@ -4,4 +4,6 @@
 
 State* Intro::run(Game& game)
 {
+	log() << "Intro" << std::endl;
+	return 0;
 }
