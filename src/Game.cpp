@@ -19,7 +19,10 @@ bool Game::run()
         delete state;
         state = next;
         if(error)
+        {
+            delete state;
             return false;
+        }
     }
     return true;
 }
