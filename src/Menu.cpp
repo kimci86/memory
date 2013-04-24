@@ -1,30 +1,30 @@
 #include "Menu.hpp"
 #include "Log.hpp"
 
-State* Menu::run(Game& game)
+Menu::Menu(Game& game)
 {
     log() << "Menu" << std::endl;
+    m_text = game.res.getText("DejaVu.ttf", "Menu\nEsc. pour quitter", sf::Color::White);
+}
 
-    sf::Text text = game.res.getText("DejaVu.ttf", "Menu\nEsc. pour quitter", sf::Color::White);
+Menu::~Menu()
+{
+    log() << "~Menu" << std::endl;
+}
 
-    while(game.window.isOpen())
-    {
-        sf::Event event;
-        while(game.window.pollEvent(event))
-        {
-            if(event.type == sf::Event::Closed)
-                game.window.close();
-            else if(event.type == sf::Event::KeyReleased)
-            {
-                if(event.key.code == sf::Keyboard::Escape)
-                    game.window.close();
-            }
-        }
+void Menu::handle(Game& game, const sf::Event& event)
+{
+    if(event.type == sf::Event::Closed)
+        game.stop();
+    else if(event.type == sf::Event::KeyReleased)
+        if(event.key.code == sf::Keyboard::Escape)
+            game.stop();
+}
 
-        game.window.clear();
-        game.window.draw(text);
-        game.window.display();
-    }
+void Menu::update(Game& game, sf::Time elapsedTime)
+{}
 
-    return 0;
+void Menu::draw(Game& game)
+{
+    game.window.draw(m_text);
 }

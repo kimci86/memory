@@ -2,30 +2,31 @@
 #include "Log.hpp"
 #include "Menu.hpp"
 
-State* Intro::run(Game& game)
+Intro::Intro(Game& game)
 {
     log() << "Intro" << std::endl;
+    m_text = game.res.getText("DejaVu.ttf", "Intro", sf::Color::White, 150);
+}
 
-    sf::Text text = game.res.getText("DejaVu.ttf", "Intro", sf::Color::White, 150);
-    sf::Clock clock;
+Intro::~Intro()
+{
+    log() << "~Intro" << std::endl;
+}
 
-    while(game.window.isOpen())
-    {
-        sf::Event event;
-        while(game.window.pollEvent(event))
-        {
-            if(event.type == sf::Event::Closed)
-            {
-                game.window.close();
-                return 0;
-            }
-        }
+void Intro::handle(Game& game, const sf::Event& event)
+{
+    if(event.type == sf::Event::Closed)
+        game.stop();
+}
 
-        game.window.clear();
-        game.window.draw(text);
-        game.window.display();
+void Intro::update(Game& game, sf::Time elapsedTime)
+{
+    m_elapsedTime += elapsedTime;
+    if(m_elapsedTime >= sf::seconds(1.f))
+        game.setState(new Future<Menu>);
+}
 
-        if(clock.getElapsedTime() >= sf::seconds(1.f))
-            return new Menu;
-    }
+void Intro::draw(Game& game)
+{
+    game.window.draw(m_text);
 }
