@@ -1,5 +1,8 @@
-#include "Menu.hpp"
+#include "State/Menu.hpp"
 #include "Log.hpp"
+
+namespace State
+{
 
 Menu::Menu(Game& game)
 {
@@ -28,3 +31,5 @@ void Menu::draw(Game& game)
 {
     game.window.draw(m_text);
 }
+
+} // namespace State

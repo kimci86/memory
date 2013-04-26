@@ -6,7 +6,12 @@
 #include "Resources.hpp"
 #include "MusicManager.hpp"
 
+namespace State
+{
+
 class FutureState;
+
+} // namespace State
 
 class Game
 {
@@ -14,7 +19,7 @@ class Game
         Game();
         ~Game();
 
-        void setState(FutureState* futureState);
+        void setState(State::FutureState* futureState);
 
         bool run();
 
@@ -29,7 +34,7 @@ class Game
         bool m_isRunning;
         bool m_error;
         sf::Clock m_clock;
-        FutureState* m_futureState;
+        State::FutureState* m_futureState;
 };
 
 #endif // GAME_HPP

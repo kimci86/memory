@@ -1,21 +1,25 @@
-#ifndef INTRO_HPP
-#define INTRO_HPP
+#ifndef STATE_MENU_HPP
+#define STATE_MENU_HPP
 
-#include "State.hpp"
+#include "State/State.hpp"
 
-class Intro : public State
+namespace State
+{
+
+class Menu : public State
 {
     public:
-        Intro(Game& game);
-        ~Intro();
+        Menu(Game& game);
+        ~Menu();
 
         virtual void handle(Game& game, const sf::Event& event);
         virtual void update(Game& game, sf::Time elapsedTime);
         virtual void draw(Game& game);
 
     private:
-        sf::Time m_elapsedTime;
         sf::Text m_text;
 };
 
-#endif // INTRO_HPP
+} // namespace State
+
+#endif // STATE_MENU_HPP

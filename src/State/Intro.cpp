@@ -1,6 +1,9 @@
-#include "Intro.hpp"
+#include "State/Intro.hpp"
 #include "Log.hpp"
-#include "Menu.hpp"
+#include "State/Menu.hpp"
+
+namespace State
+{
 
 Intro::Intro(Game& game)
 {
@@ -30,3 +33,5 @@ void Intro::draw(Game& game)
 {
     game.window.draw(m_text);
 }
+
+} // namespace State

@@ -1,5 +1,5 @@
 #include "Game.hpp"
-#include "Intro.hpp"
+#include "State/Intro.hpp"
 
 Game::Game()
  : m_isRunning(false), m_error(false), m_futureState(0)
@@ -16,7 +16,7 @@ Game::~Game()
     settings.save();
 }
 
-void Game::setState(FutureState* futureState)
+void Game::setState(State::FutureState* futureState)
 {
     delete m_futureState;
     m_futureState = futureState;
@@ -24,7 +24,7 @@ void Game::setState(FutureState* futureState)
 
 bool Game::run()
 {
-    State* state = new Intro(*this);
+    State::State* state = new State::Intro(*this);
     m_isRunning = true;
     m_clock.restart();
 

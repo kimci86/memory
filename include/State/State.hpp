@@ -1,7 +1,10 @@
-#ifndef STATE_HPP
-#define STATE_HPP
+#ifndef STATE_STATE_HPP
+#define STATE_STATE_HPP
 
 #include "Game.hpp"
+
+namespace State
+{
 
 class State
 {
@@ -29,4 +32,6 @@ class Future : public FutureState
         }
 };
 
-#endif // STATE_HPP
+} // namespace State
+
+#endif // STATE_STATE_HPP
