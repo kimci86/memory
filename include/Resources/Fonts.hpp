@@ -1,8 +1,11 @@
-#ifndef FONTS_HPP
-#define FONTS_HPP
+#ifndef RESOURCES_FONTS_HPP
+#define RESOURCES_FONTS_HPP
 
 #include <SFML/Graphics.hpp>
-#include "ResourceManager.hpp"
+#include "Resources/ResourceManager.hpp"
+
+namespace Resources
+{
 
 class Fonts : public ResourceManager<sf::Font>
 {
@@ -12,4 +15,6 @@ class Fonts : public ResourceManager<sf::Font>
         sf::Text getText(const std::string& name, const std::string& string, const sf::Color& color = sf::Color::Black, unsigned int size = 30);
 };
 
-#endif // FONTS_HPP
+} // namespace Resources
+
+#endif // RESOURCES_FONTS_HPP

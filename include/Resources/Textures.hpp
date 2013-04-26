@@ -1,8 +1,11 @@
-#ifndef TEXTURES_HPP
-#define TEXTURES_HPP
+#ifndef RESOURCES_TEXTURES_HPP
+#define RESOURCES_TEXTURES_HPP
 
 #include <SFML/Graphics.hpp>
-#include "ResourceManager.hpp"
+#include "Resources/ResourceManager.hpp"
+
+namespace Resources
+{
 
 class Textures : public ResourceManager<sf::Texture>
 {
@@ -12,4 +15,6 @@ class Textures : public ResourceManager<sf::Texture>
         sf::Sprite getSprite(const std::string& name, const sf::IntRect& rect = sf::IntRect());
 };
 
-#endif // TEXTURES_HPP
+} // namespace Resources
+
+#endif // RESOURCES_TEXTURES_HPP

@@ -1,8 +1,11 @@
-#ifndef RESOURCEMANAGER_HPP
-#define RESOURCEMANAGER_HPP
+#ifndef RESOURCES_RESOURCEMANAGER_HPP
+#define RESOURCES_RESOURCEMANAGER_HPP
 
 #include <map>
 #include <string>
+
+namespace Resources
+{
 
 template <typename Resource>
 class ResourceManager : private std::map<std::string, Resource>
@@ -23,6 +26,8 @@ class ResourceManager : private std::map<std::string, Resource>
         std::string m_directory;
 };
 
-#include <ResourceManager.inl>
+} // namespace Resources
 
-#endif // RESOURCEMANAGER_HPP
+#include <Resources/ResourceManager.inl>
+
+#endif // RESOURCES_RESOURCEMANAGER_HPP

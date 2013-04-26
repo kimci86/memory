@@ -1,5 +1,8 @@
 #include "Log.hpp"
 
+namespace Resources
+{
+
 template <typename Resource>
 ResourceManager<Resource>::ResourceManager(const std::string& directory)
  : m_directory(directory)
@@ -46,3 +49,5 @@ bool ResourceManager<Resource>::load(const std::string& name, const std::string&
         return true;
     }
 }
+
+} // namespace Resources

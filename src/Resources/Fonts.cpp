@@ -1,4 +1,7 @@
-#include "Fonts.hpp"
+#include "Resources/Fonts.hpp"
+
+namespace Resources
+{
 
 Fonts::Fonts()
  : ResourceManager<sf::Font>("fonts")
@@ -13,3 +16,5 @@ sf::Text Fonts::getText(const std::string& name, const std::string& string, cons
     text.setColor(color);
     return text;
 }
+
+} // namespace Resources

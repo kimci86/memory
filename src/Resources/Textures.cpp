@@ -1,4 +1,7 @@
-#include "Textures.hpp"
+#include "Resources/Textures.hpp"
+
+namespace Resources
+{
 
 Textures::Textures()
  : ResourceManager<sf::Texture>("graphics")
@@ -14,3 +17,5 @@ sf::Sprite Textures::getSprite(const std::string& name, const sf::IntRect& rect)
     else
         return sf::Sprite(get(name), rect);
 }
+
+} // namespace Resources
