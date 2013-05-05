@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "Settings.hpp"
 #include "Resources/Resources.hpp"
-#include "MusicManager.hpp"
+#include "Music/Player.hpp"
 
 namespace State
 {
@@ -28,7 +28,7 @@ class Game
         sf::RenderWindow window;
         Settings settings;
         Resources::Resources res; // global resources
-        MusicManager music;
+        Music::Player music;
 
     private:
         bool m_isRunning;
