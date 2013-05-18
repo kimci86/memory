@@ -97,6 +97,7 @@ void Player::run()
 {
     while(isRunning())
     {
+        // Thread safe block
         {
             sf::Lock lock(m_mutex);
             if(m_music.getStatus() == sf::Music::Stopped)

@@ -12,8 +12,12 @@ class State
         virtual ~State() {}
 
         virtual void handle(Game& game, const sf::Event& event) = 0;
-        virtual void update(Game& game, sf::Time elapsedTime) = 0;
-        virtual void draw(Game& game) = 0;
+        virtual void update(Game& game, sf::Time frameTime) { m_elapsedTime += frameTime; }
+        virtual void draw(Game& game) const = 0;
+        const sf::Time& getElapsedTime() const { return m_elapsedTime; }
+        
+    protected:
+        sf::Time m_elapsedTime;
 };
 
 class FutureState

@@ -13,11 +13,12 @@ class Menu : public State
         ~Menu();
 
         virtual void handle(Game& game, const sf::Event& event);
-        virtual void update(Game& game, sf::Time elapsedTime);
-        virtual void draw(Game& game);
+        virtual void update(Game& game, sf::Time frameTime);
+        virtual void draw(Game& game) const;
 
     private:
         sf::Text m_text;
+        std::vector<sf::Text> m_items;
 };
 
 } // namespace State

@@ -22,14 +22,15 @@ void Intro::handle(Game& game, const sf::Event& event)
         game.stop();
 }
 
-void Intro::update(Game& game, sf::Time elapsedTime)
+void Intro::update(Game& game, sf::Time frameTime)
 {
-    m_elapsedTime += elapsedTime;
-    if(m_elapsedTime >= sf::seconds(1.f))
+    State::update(game, frameTime);
+
+    if(getElapsedTime() >= sf::seconds(1.f))
         game.setState(new Future<Menu>);
 }
 
-void Intro::draw(Game& game)
+void Intro::draw(Game& game) const
 {
     game.window.draw(m_text);
 }

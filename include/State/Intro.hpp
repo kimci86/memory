@@ -13,11 +13,10 @@ class Intro : public State
         ~Intro();
 
         virtual void handle(Game& game, const sf::Event& event);
-        virtual void update(Game& game, sf::Time elapsedTime);
-        virtual void draw(Game& game);
+        virtual void update(Game& game, sf::Time frameTime);
+        virtual void draw(Game& game) const;
 
     private:
-        sf::Time m_elapsedTime;
         sf::Text m_text;
 };
 

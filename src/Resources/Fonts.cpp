@@ -14,6 +14,7 @@ sf::Text Fonts::getText(const std::string& name, const std::string& string, cons
 
     sf::Text text(string, get(name), size);
     text.setColor(color);
+        
     return text;
 }
 
